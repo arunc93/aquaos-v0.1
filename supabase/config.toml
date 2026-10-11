@@ -1,0 +1,2 @@
+# Optional. The pilot applies supabase/migrations in the Supabase SQL editor.
+project_id = "aquaos"
