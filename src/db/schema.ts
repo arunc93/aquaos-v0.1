@@ -162,6 +162,14 @@ export const announcements = pgTable("announcements", {
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });
 
+export const deviceTokens = pgTable("device_tokens", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  userId: uuid("user_id").notNull(),
+  token: text("token").notNull(),
+  platform: text("platform").notNull(),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+});
+
 export const tankLevels = pgTable("tank_levels", {
   id: uuid("id").primaryKey().defaultRandom(),
   societyId: uuid("society_id").notNull(),

@@ -9,7 +9,17 @@
     "ios": {
       "supportsTablet": true
     },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "color": "#0f6e75",
+          "defaultChannel": "deliveries"
+        }
+      ]
+    ],
     "android": {
+      "permissions": ["POST_NOTIFICATIONS"],
       "adaptiveIcon": {
         "backgroundColor": "#f3f7f7",
         "foregroundImage": "./assets/android-icon-foreground.png",

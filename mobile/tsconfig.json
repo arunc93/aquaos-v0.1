@@ -3,5 +3,5 @@
   "compilerOptions": {
     "strict": true
   },
-  "exclude": ["src/lib/whatsapp.test.ts"]
+  "exclude": ["src/lib/whatsapp.test.ts", "src/lib/push.test.ts"]
 }

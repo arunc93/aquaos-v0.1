@@ -2,8 +2,7 @@
 
 Phase 1 is the loop book a tanker, deliver it with a photo and OTP, and log quality. These items were left out on purpose.
 
-- Push notifications when a booking moves to in transit or delivered. The Expo app in `mobile/` is the resident home only. Admins and vendors stay on the website.
-- A TDS chart on `/quality`. The rows are already stored in `quality_logs`.
+- A store release and an iOS push key. The resident app already asks for a push token, and a tanker moving to in transit or delivered notifies that phone. Expo Go cannot show those notifications.
 - Razorpay checkout on `/billing`. The page is a static stub.
 - Preferred vendors and marketplace filters.
 - Map tiles. Society address is text.

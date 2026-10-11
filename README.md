@@ -66,7 +66,7 @@ Row Level Security is on for every table. A signed-in user reads society data on
 
 ## Resident phone app
 
-The Expo app in `mobile/` is the resident home: next delivery, announcements, WhatsApp share, and feedback. It does not send push notifications.
+The Expo app in `mobile/` is the resident home: next delivery, announcements, WhatsApp share, and feedback. When a tanker is marked in transit or delivered, residents who registered this phone receive a notification. That notification does not include the delivery code. Expo Go cannot receive it. A development build on a physical Android phone can.
 
 ```bash
 cd mobile
@@ -88,6 +88,8 @@ npm start
 
 Sign in as `resident@lakeview.aquaos.demo`. An admin or vendor sign-in is asked to use the website.
 
+Expo Go can open the resident home. It cannot show the tanker notification. For that, install Android Studio and run `npx expo run:android` from `mobile/` with a phone connected. Run `npx eas init` once so Expo writes a project id into `app.json`. Without that id the app does not register a push token.
+
 ## Later
 
-See `docs/PHASE2.md` for push notifications, charts, payments, maps, and sensors.
+See `docs/PHASE2.md` for a store build, charts, payments, maps, and sensors.

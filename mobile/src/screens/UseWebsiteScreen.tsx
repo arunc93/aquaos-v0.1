@@ -1,5 +1,5 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
-import { supabase } from "../lib/supabase";
+import { signOutAndClearPush } from "../lib/register-push";
 import { colors } from "../theme";
 
 export function UseWebsiteScreen() {
@@ -11,7 +11,7 @@ export function UseWebsiteScreen() {
       </Text>
       <Pressable
         accessibilityRole="button"
-        onPress={() => supabase?.auth.signOut()}
+        onPress={() => signOutAndClearPush()}
         style={styles.button}
       >
         <Text style={styles.buttonText}>Sign out</Text>

@@ -8,9 +8,10 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test src/lib/booking.test.ts src/lib/rwh.test.ts src/lib/phone.test.ts src/lib/whatsapp.test.ts",
+    "test": "tsx --test src/lib/booking.test.ts src/lib/rwh.test.ts src/lib/phone.test.ts src/lib/whatsapp.test.ts src/lib/tds-chart.test.ts",
     "seed": "tsx scripts/seed.ts",
-    "prove": "tsx scripts/prove-loop.ts"
+    "prove": "tsx scripts/prove-loop.ts",
+    "prove-push": "tsx scripts/prove-push.ts"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.4.0",
@@ -34,6 +35,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.0",
+    "postgres": "^3.4.9",
     "tailwindcss": "^4",
     "tsx": "^4.23.15",
     "typescript": "^5"

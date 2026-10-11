@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SubmitButton } from "@/components/form-bits";
+import { TdsChart } from "@/components/tds-chart";
 import { BadgeLabel } from "@/components/status-badge";
 import { Table, TableCell, TableHead } from "@/components/ui/table";
 import { resolveComplaint } from "@/lib/actions";
@@ -43,6 +44,12 @@ export default async function QualityPage({
         </Link>
       </div>
       {query.error ? <p role="alert" className="text-sm font-medium text-destructive">{query.error}</p> : null}
+      <TdsChart
+        readings={(logs.data ?? []).map((log) => ({
+          testedAt: log.tested_at,
+          tds: Number(log.tds),
+        }))}
+      />
       {(logs.data ?? []).length === 0 ? (
         <p>No tests yet. <Link className="font-semibold text-primary" href="/quality/new">Log the first result</Link></p>
       ) : (

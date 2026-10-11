@@ -14,6 +14,7 @@ import {
 } from "react-native";
 import { BOOKING_STATUSES, STATUS_LABEL, type BookingStatus } from "../lib/booking";
 import { formatWhen } from "../lib/format";
+import { signOutAndClearPush } from "../lib/register-push";
 import { supabase } from "../lib/supabase";
 import { announcementMessage, deliveryMessage, whatsappShareUrl } from "../lib/whatsapp";
 import { colors, statusColor } from "../theme";
@@ -178,7 +179,7 @@ export function HomeScreen({ userId, societyId }: { userId: string; societyId: s
     >
       <View style={styles.header}>
         <Text style={styles.eyebrow}>{societyName}</Text>
-        <Pressable accessibilityRole="button" onPress={() => supabase?.auth.signOut()}>
+        <Pressable accessibilityRole="button" onPress={() => signOutAndClearPush()}>
           <Text style={styles.signOut}>Sign out</Text>
         </Pressable>
       </View>

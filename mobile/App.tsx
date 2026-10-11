@@ -5,6 +5,7 @@ import type { Session } from "@supabase/supabase-js";
 import { HomeScreen } from "./src/screens/HomeScreen";
 import { LoginScreen } from "./src/screens/LoginScreen";
 import { UseWebsiteScreen } from "./src/screens/UseWebsiteScreen";
+import { registerResidentPush } from "./src/lib/register-push";
 import { supabase, supabaseConfigError } from "./src/lib/supabase";
 import { colors } from "./src/theme";
 
@@ -66,6 +67,11 @@ export default function App() {
       active = false;
     };
   }, [session]);
+
+  useEffect(() => {
+    if (!profile || profile.role !== "resident" || !profile.society_id) return;
+    registerResidentPush(profile.id).catch(() => undefined);
+  }, [profile]);
 
   let body = <LoginScreen />;
   if (supabaseConfigError) {
